@@ -15,3 +15,4 @@ int ft_toupper(int c);
 int ft_tolower(int c);
 int ft_isascii(int c);
 int ft_isdigit(int c);
+int ft_strncmp(char *s1, char *s2, int n);
