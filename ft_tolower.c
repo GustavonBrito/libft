@@ -21,7 +21,7 @@ int ft_tolower(int c)
     return (c + 32);
 }
 
-int main(void)
+/*int main(void)
 {
     int i;
     
@@ -31,6 +31,5 @@ int main(void)
         printf("%c", ft_tolower(gustavo[i]));
         i++;
     }
-    printf("\n");
     return 0;
-}
+}*/
