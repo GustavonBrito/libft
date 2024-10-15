@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 18:03:12 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/13 18:03:12 by marvin           ###   ########.fr       */
+/*   Updated: 2024/10/15 00:11:45 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	ft_tolower(int c)
 {
-	if (c < 65 && c > 90)
-	{
-		return (c);
-	}
-	return (c + 32);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }
 
 /*int main(void)

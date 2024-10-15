@@ -3,19 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 18:56:26 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/13 18:56:26 by marvin           ###   ########.fr       */
+/*   Updated: 2024/10/15 00:42:12 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
+#include <string.h>
 
 int	ft_strncmp(char *s1, char *s2, int n)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] && s2[i] && i + 1 < n)
+	if (n == 0)
+		return (0);
+	while (s1[i] && s2[i] && i +	 < n)
 	{
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
@@ -24,30 +29,15 @@ int	ft_strncmp(char *s1, char *s2, int n)
 	return (s1[i] - s2[i]);
 }
 
-/*int main(void)
+int	main(void)
 {
-	char char1tocompare[] = "gustavo";
-	char char2tocompare[] = "gustvvoa";
+	// char char1tocompare[] = "abcdef";
+	// char char2tocompare[] = "abc\375xx";
 
-	printf("Compare 'abc' and 'abc' (3): %d\n", ft_strncmp("abc", "abc", 3));
-		// Deve retornar 0
-	printf("Compare 'abc' and 'abd' (3): %d\n", ft_strncmp("abc", "abd", 3));
-		// Deve retornar negativo
-	printf("Compare 'abc' and 'abb' (3): %d\n", ft_strncmp("abc", "abb", 3));
-		// Deve retornar positivo
-	printf("Compare 'abc' and 'abcd' (3): %d\n", ft_strncmp("abc", "abcd", 3));
-		// Deve retornar 0
-	printf("Compare 'abc' and 'abcd' (4): %d\n", ft_strncmp("abc", "abcd", 4));
-		// Deve retornar negativo
-	printf("Compare 'abc' and 'abc' (3): %d\n", strncmp("abc", "abc", 3));
-		// Deve retornar 0
-	printf("Compare 'abc' and 'abd' (3): %d\n", strncmp("abc", "abd", 3));
-		// Deve retornar negativo
-	printf("Compare 'abc' and 'abb' (3): %d\n", strncmp("abc", "abb", 3));
-		// Deve retornar positivo
-	printf("Compare 'abc' and 'abcd' (3): %d\n", strncmp("abc", "abcd", 3));
-		// Deve retornar 0
-	printf("Compare 'abc' and 'abcd' (4): %d\n", strncmp("abc", "abcd", 4));
-		// Deve retornar negativo
+	printf("minha Compare 'abcdef' and 'abc\375xx' (3): %d\n", ft_strncmp("abcdef",
+			"abc\375xx", 5));
+	printf("da loja ompare 'abcdef' and 'abc\375xx' (3): %d\n",strncmp("abcdef",
+			"abc\375xx", 5));
+	// Deve retornar negativo
 	return (0);
-}*/
+}
