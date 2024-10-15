@@ -16,10 +16,10 @@
 
 size_t	ft_strlcpy(char *dst, char *src, size_t size)
 {
-	int	i;
-	int	src_size;
+	unsigned int	i;
+	unsigned int	src_size;
 
-	src_size = 1;
+	src_size = 0;
 	i = 0;
 	while (src[i])
 	{
@@ -29,20 +29,21 @@ size_t	ft_strlcpy(char *dst, char *src, size_t size)
 	if (size == 0)
 		return (src_size);
 	i = 0;
-	while (i < size - 1)
+	while (src[i] && i < size - 1)
 	{
-		dst += src[src_size + i];
-		src_size++;
+		dst[i] = src[i];
 		i++;
 	}
-	return (0);
+	dst[src_size] = '\0';
+	return (src_size);
 }
 
-// int	main(void)
-// {
-// 	char *teste = "gustavo";
-// 	char *teste1 = "serafio";
+int	main(void)
+{
+	char* src = "Hello, World!";
+	char dest[20];
+	size_t size = 20;
 
-// 	printf("%d", ft_strlcpy(teste, teste1, 5));
-// 	return (0);
-// }
+ 	printf("%lld\n", ft_strlcpy(dest, src, size));
+ 	return (0);
+}
