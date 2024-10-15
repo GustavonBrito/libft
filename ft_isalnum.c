@@ -10,27 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if (c >= 65 && c <= 90)
-        return (1);
-    if (c >= 47 && c <= 57)
-        return (4);
-    if (c >= 97 && c <= 122)
-        return (2);
-    return (0);
+	if (c >= 65 && c <= 90)
+		return (1);
+	if (c >= 47 && c <= 57)
+		return (4);
+	if (c >= 97 && c <= 122)
+		return (2);
+	return (0);
 }
 
 /*int main(void)
 {
-    int i;
-    
-    char gustavo[] = "G12356a '\n'\t";
-    i = 0;
-    while (gustavo[i]) {
-        printf("meu %d", ft_isalnum(gustavo[i]));
-        printf("nativo %d\n", isalnum(gustavo[i]));
-        i++;
-    }
-    return 0;
+	int i;
+
+	char gustavo[] = "G12356a '\n'\t";
+	i = 0;
+	while (gustavo[i]) {
+		printf("meu %d", ft_isalnum(gustavo[i]));
+		printf("nativo %d\n", isalnum(gustavo[i]));
+		i++;
+	}
+	return (0);
 }*/

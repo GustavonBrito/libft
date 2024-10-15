@@ -12,26 +12,25 @@
 
 #include <stdio.h>
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c < 97 && c > 122)
-    {
-        return c;
-    }
-    return (c - 32);
+	if (c < 97 && c > 122)
+	{
+		return (c);
+	}
+	return (c - 32);
 }
-
 
 /*int main(void)
 {
-    int i;
-    
-    char gustavo[] = "ana paula serafio brito";
-    i = 0;
-    while (gustavo[i]) {
-        printf("%c", ft_toupper(gustavo[i]));
-        i++;
-    }
-    printf("\n");
-    return 0;
+	int i;
+
+	char gustavo[] = "ana paula serafio brito";
+	i = 0;
+	while (gustavo[i]) {
+		printf("%c", ft_toupper(gustavo[i]));
+		i++;
+	}
+	printf("\n");
+	return (0);
 }*/

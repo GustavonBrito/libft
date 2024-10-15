@@ -1,29 +1,30 @@
 CC = gcc
 
-HEADER = libft.h
+	HEADER = libft.h
 
-SRCS = 
+					SRCS =
 
-OBJS = $(:.c=.o)
+		OBJS = $(
+			:.c =.o)
 
-CFLAGS = -Werror -Wall -Wextra -I $(HEADER)
+			CFLAGS = -Werror - Wall - Wextra -
+	I $(HEADER)
 
-LIBFT = libft.a
+		LIBFT = libft.a
 
-all: $(LIBFT)
+					all : $(LIBFT)
 
-$(LIBFT): $(OBJS)
-	ar rcs $(LIBFT) $(OBJS)
+								$(LIBFT)
+	: $(OBJS) ar rcs $(LIBFT) $(OBJS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+			%.o : %.c $(CC) $(CFLAGS) -
+		c $ <
+	-o $ @
 
-clean:
-	rm -f $(OBJS)
+		clean : rm -
+		f $(OBJS)
 
-fclean:
-	rm -f $(OBJS) $(LIBFT)
+			fclean : rm -
+						f $(OBJS) $(LIBFT)
 
-re:
-	@$(MAKE) fclean
-	@$(MAKE) all
+							re : @$(MAKE) fclean @$(MAKE) all

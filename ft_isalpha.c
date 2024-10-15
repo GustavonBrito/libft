@@ -12,26 +12,26 @@
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    if (c >= 'a' && c <= 'z')
-        return (2);
-    if (c >= 'A' && c <= 'Z')
-        return (1);
-    return (0);
+	if (c >= 'a' && c <= 'z')
+		return (2);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	return (0);
 }
 
 /* int main(void)
 {
-    int i;
-    
-    char gustavo[] = " naA";
-    i = 0;
-    while (gustavo[i]) {
-        printf("ft %d\n", ft_isalpha(gustavo[i]));
-        printf("nativa %d\n", isalpha(gustavo[i]));
-        i++;
-    }
-    printf("\n");
-    return 0;
+	int i;
+
+	char gustavo[] = " naA";
+	i = 0;
+	while (gustavo[i]) {
+		printf("ft %d\n", ft_isalpha(gustavo[i]));
+		printf("nativa %d\n", isalpha(gustavo[i]));
+		i++;
+	}
+	printf("\n");
+	return (0);
 } */

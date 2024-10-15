@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= 48 && c <= 57)
-        return (1);
-    return (0);
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }
 
 /*int main(void)
 {
-    char digit = 'c';
+	char digit = 'c';
 
-    printf("%d", ft_isdigit(digit));
-    return (0);
+	printf("%d", ft_isdigit(digit));
+	return (0);
 }*/
