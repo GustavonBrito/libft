@@ -13,10 +13,11 @@
 #include <string.h>
 #include <stdio.h>
 
-/* char *strrchr(const char *s, int c)
+char *ft_strrchr(char *s, int c)
 {
     int index;
     int s_size;
+    int last_index;
 
     index = 0;
     s_size = 0;
@@ -25,14 +26,25 @@
         s_size++;
         index++;
     }
+    last_index = s_size;
+    index = 0;
     while (s_size > 0)
     {
         if (s[s_size - 1] == c)
-            return (s[s_size]);
+        {
+            while (s_size - 1< last_index)
+            {
+                s = "0";
+                s[index] = s[s_size - 1];
+                s_size++;
+                index++;
+            }
+            break;
+        }
         s_size--;
     }
-
-} */
+    return (s);
+}
 
 int main(void)
 {
@@ -40,6 +52,6 @@ int main(void)
     char a = 'o';
 
 
-    printf("%s", strrchr(hello, a));
+    ft_strrchr(hello, a);
     return (0);
 }
