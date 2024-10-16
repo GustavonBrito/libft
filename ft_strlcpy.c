@@ -6,13 +6,12 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:20:31 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/14 21:14:04 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/15 22:13:28 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
 #include <stddef.h>
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, char *src, size_t size)
 {
@@ -34,16 +33,16 @@ size_t	ft_strlcpy(char *dst, char *src, size_t size)
 		dst[i] = src[i];
 		i++;
 	}
-	dst[src_size] = '\0';
+	dst[i] = '\0';
 	return (src_size);
 }
 
-int	main(void)
-{
-	char* src = "Hello, World!";
-	char dest[20];
-	size_t size = 20;
+// int	main(void)
+// {
+// 	char *src = "Hello, World!";
+// 	char dest[20];
+// 	size_t size = 20;
 
- 	printf("%lld\n", ft_strlcpy(dest, src, size));
- 	return (0);
-}
+// 	printf("%lld\n", ft_strlcpy(dest, src, size));
+// 	return (0);
+// }
