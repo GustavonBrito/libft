@@ -29,10 +29,11 @@ static char * do_new_string(int s_size, int last_index, char* s,  char c){
             }
             s[index] = '\0';
             break;
-        }
+        } 
+        else
+            s = '\0';
         s_size--;
     }
-
     return (s);
 }
 
@@ -54,7 +55,7 @@ char *ft_strrchr(char *s, int c)
     last_index = s_size;
     index = 0;
 
-    s = do_new_string(s_size, last_index, s, c);
+    do_new_string(s_size, last_index, s, c);
 
     return (s);
 }
@@ -62,10 +63,14 @@ char *ft_strrchr(char *s, int c)
 int main(void)
 {
     char hello[] = "Hello, World!";
-    char a = '\0';
+    char a = 'z';
 
-
-    printf("%s", ft_strrchr(hello, a));
+    //printf("%s\n", ft_strrchr("Hello, World!", 'o')); // Esperado: "orld!"
+    //printf("%s\n", ft_strrchr("Hello, World!", 'H')); // Esperado: "Hello, World!"
+    //printf("%s\n", ft_strrchr("Hello, World!", '!')); // Esperado: "!"
+    //printf("%s\n", ft_strrchr("Hello, World!", 'z')); // Esperado: (null)
+    //printf("%s\n", ft_strrchr("Hello, World!", '\0')); // Esperado: ""
+    printf("%s\n", ft_strrchr(hello, a)); // Esperado: ""
     //printf("%s", strrchr(hello, a));
     return (0);
 }
