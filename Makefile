@@ -20,10 +20,10 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	del -Q $(OBJS)
 
 fclean:
-	rm -f $(OBJS) $(NAME)
+	del -Q $(OBJS) $(NAME)
 
 re:
 	@$(MAKE) fclean

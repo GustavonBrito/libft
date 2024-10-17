@@ -22,3 +22,4 @@ int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_isprint(int c);
 size_t	ft_strlcpy(char *dst, char *src, size_t size);
+char *ft_strrchr(char *s, int c);
