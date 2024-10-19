@@ -6,12 +6,9 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:01:27 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/19 02:05:24 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/19 09:02:31 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
 
 static int	ft_isascii(int c)
 {
@@ -23,10 +20,12 @@ static int	ft_isascii(int c)
 char	*ft_strrchr(char *s, int c)
 {
 	int	i;
-	int	last_index;
+	int	flag;
 
 	i = 0;
-	last_index = 0;
+	flag = 0;
+	if (c > 255)
+		c = c % 256;
 	while (s[i])
 	{
 		if (ft_isascii(s[i]) == 0)
@@ -35,17 +34,15 @@ char	*ft_strrchr(char *s, int c)
 		{
 			s = &s[i];
 			i = 0;
+			flag = 1;
 		}
 		i++;
-		last_index++;
 	}
+	if (flag == 1)
+		return (s);
 	if (c == 0)
 		return (s = &s[i]);
-	if (s[0] == 0)
-		return (0);
-	if (i == last_index && s[0] != c)
-		return (0);
-	return (s);
+	return (0);
 }
 
 // int	main(void)
