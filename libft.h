@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 16:18:17 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/15 23:12:25 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/19 00:13:23 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,4 @@ int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_isprint(int c);
 size_t	ft_strlcpy(char *dst, char *src, size_t size);
-char *ft_strrchr(char *s, int c);
+char	*ft_strrchr(char *s, int c);

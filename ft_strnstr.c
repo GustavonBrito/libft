@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:07:43 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/17 13:07:43 by marvin           ###   ########.fr       */
+/*   Updated: 2024/10/19 00:12:42 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 // char *strnstr(const char *big, const char *little, size_t len)
 // {
 // 	int i;
-	
+
 // 	i = 0;
 // 	while (little[i] && len > 0)
 // 	{
@@ -42,18 +42,22 @@
 // 	}
 // }
 
+// int	main(void)
+// {
+// 	// Test cases
+// 	char *result;
 
-int main(void) {
-    // Test cases
-    char *result;
+// 	result = strstr("sco scorza", "scor");
+// 	if (result != NULL)
+// 	{
+// 		printf("Test passed for haystack \"Hello, World!\" and needle \"o\"\n");
+// 		printf("Result: \"%s\"\n", result);
+// 	}
+// 	else
+// 	{
+// 		printf("Test failed for haystack \"Hello,
+// 			World!\" and needle \"World\"\n");
+// 	}
 
-    result = strstr("sco scorza", "scor");
-    if (result != NULL) {
-        printf("Test passed for haystack \"Hello, World!\" and needle \"o\"\n");
-        printf("Result: \"%s\"\n", result);
-    } else {
-        printf("Test failed for haystack \"Hello, World!\" and needle \"World\"\n");
-    }
-
-    return 0;
-}
+// 	return (0);
+// }

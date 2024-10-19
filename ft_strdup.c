@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 00:51:17 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2024/10/16 01:16:32 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/19 00:13:08 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ char	*strdup(const char *s)
 	return (string_dup);
 }
 
-int	main(void)
-{
-	char *s = "gustavo";
-	free(strdup(s));
-	printf("%s\n", strdup(s));
-	return (0);
-}
+// int	main(void)
+// {
+// 	char *s = "gustavo";
+// 	free(strdup(s));
+// 	printf("%s\n", strdup(s));
+// 	return (0);
+// }

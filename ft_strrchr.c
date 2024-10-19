@@ -3,74 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:01:27 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/17 11:01:27 by marvin           ###   ########.fr       */
+/*   Updated: 2024/10/19 02:05:24 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-static char * do_new_string(int s_size, int last_index, char* s,  char c){
-    int index;
-
-    index = 0;    
-    while (s_size > 0)
-    {
-        if (s[s_size - 1] == c)
-        {
-            while (s_size - 1 < last_index)
-            {
-                s[index] = s[s_size - 1];
-                s_size++;
-                index++;
-            }
-            s[index] = '\0';
-            break;
-        } 
-        else
-            s = '\0';
-        s_size--;
-    }
-    return (s);
-}
-
-char *ft_strrchr(char *s, int c)
+static int	ft_isascii(int c)
 {
-    int index;
-    int s_size;
-    int last_index;
-
-    index = 0;
-    s_size = 0;
-    if (c == '\0')
-        return ("\0");
-    while (s[index])
-    {
-        s_size++;
-        index++;
-    }
-    last_index = s_size;
-    index = 0;
-
-    do_new_string(s_size, last_index, s, c);
-
-    return (s);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
 
-int main(void)
+char	*ft_strrchr(char *s, int c)
 {
-    char hello[] = "Hello, World!";
-    char a = 'z';
+	int	i;
+	int	last_index;
 
-    //printf("%s\n", ft_strrchr("Hello, World!", 'o')); // Esperado: "orld!"
-    //printf("%s\n", ft_strrchr("Hello, World!", 'H')); // Esperado: "Hello, World!"
-    //printf("%s\n", ft_strrchr("Hello, World!", '!')); // Esperado: "!"
-    //printf("%s\n", ft_strrchr("Hello, World!", 'z')); // Esperado: (null)
-    //printf("%s\n", ft_strrchr("Hello, World!", '\0')); // Esperado: ""
-    printf("%s\n", ft_strrchr(hello, a)); // Esperado: ""
-    //printf("%s", strrchr(hello, a));
-    return (0);
+	i = 0;
+	last_index = 0;
+	while (s[i])
+	{
+		if (ft_isascii(s[i]) == 0)
+			return (0);
+		if (s[i] == c)
+		{
+			s = &s[i];
+			i = 0;
+		}
+		i++;
+		last_index++;
+	}
+	if (c == 0)
+		return (s = &s[i]);
+	if (s[0] == 0)
+		return (0);
+	if (i == last_index && s[0] != c)
+		return (0);
+	return (s);
 }
+
+// int	main(void)
+// {
+// 	char *hello = "tests";
+// 	int a = 1024 + 'e';
+
+// 	//printf("%s", ft_strrchr(hello, a));
+// 	printf("%s", strrchr(hello, a));
+// 	return (0);
+// }

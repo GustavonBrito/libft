@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 18:56:26 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/15 23:01:08 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/19 00:12:57 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int	ft_strncmp(const char *s1, const char *s2, int n)
 	return (s1[i] - s2[i]);
 }
 
-int	main(void)
-{
-	printf("minha Compare 'abcdef' and 'abc\375xx' (3): %d\n",
-		ft_strncmp("abcdef", "abc\375xx", 5));
-	printf("da loja ompare 'abcdef' and 'abc\375xx' (3): %d\n",
-		strncmp("abcdef", "abc\375xx", 5));
-	return (0);
-}
+// int	main(void)
+// {
+// 	printf("minha Compare 'abcdef' and 'abc\375xx' (3): %d\n",
+// 		ft_strncmp("abcdef", "abc\375xx", 5));
+// 	printf("da loja ompare 'abcdef' and 'abc\375xx' (3): %d\n",
+// 		strncmp("abcdef", "abc\375xx", 5));
+// 	return (0);
+// }
