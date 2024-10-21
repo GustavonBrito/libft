@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 18:56:26 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/19 20:49:03 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/21 13:49:05 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,22 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	const unsigned char	*s1_unsigned;
+	const unsigned char	*s2_unsigned;
+	unsigned int		i;
 
 	i = 0;
+	s1_unsigned = (const unsigned char *)s1;
+	s2_unsigned = (const unsigned char *)s2;
 	if (n == 0)
 		return (0);
-	while (s1[i] && s2[i] && i < n - 1)
+	while (s1_unsigned[i] && s2_unsigned[i] && i < n - 1)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (s1_unsigned[i] != s2_unsigned[i])
+			return (s1_unsigned[i] - s2_unsigned[i]);
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return (s1_unsigned[i] - s2_unsigned[i]);
 }
 
 // int	main(void)
