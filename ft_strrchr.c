@@ -6,16 +6,12 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:01:27 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/19 09:02:31 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/19 20:11:14 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isascii(int c)
-{
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
-}
+#include "libft.h"
+#include <stdio.h>
 
 char	*ft_strrchr(char *s, int c)
 {
@@ -50,7 +46,7 @@ char	*ft_strrchr(char *s, int c)
 // 	char *hello = "tests";
 // 	int a = 1024 + 'e';
 
-// 	//printf("%s", ft_strrchr(hello, a));
-// 	printf("%s", strrchr(hello, a));
+// 	printf("%s", ft_strrchr(hello, a));
+// 	//printf("%s", strrchr(hello, a));
 // 	return (0);
 // }

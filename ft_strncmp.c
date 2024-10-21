@@ -6,16 +6,16 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 18:56:26 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/19 00:12:57 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/19 20:49:03 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-int	ft_strncmp(const char *s1, const char *s2, int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	if (n == 0)
@@ -31,8 +31,8 @@ int	ft_strncmp(const char *s1, const char *s2, int n)
 
 // int	main(void)
 // {
-// 	printf("minha Compare 'abcdef' and 'abc\375xx' (3): %d\n",
-// 		ft_strncmp("abcdef", "abc\375xx", 5));
+// 	// printf("minha Compare 'abcdef' and 'abc\375xx' (3): %d\n",
+// 	// 	ft_strncmp("abcdef", "abc\375xx", 5));
 // 	printf("da loja ompare 'abcdef' and 'abc\375xx' (3): %d\n",
 // 		strncmp("abcdef", "abc\375xx", 5));
 // 	return (0);
