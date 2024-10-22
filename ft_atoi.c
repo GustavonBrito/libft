@@ -6,13 +6,11 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 17:35:55 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/16 00:14:44 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/21 23:15:20 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_atoi(char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	index;
 	int	sign;

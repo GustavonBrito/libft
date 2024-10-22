@@ -6,14 +6,14 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:20:31 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/15 22:13:28 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/21 23:10:58 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
 #include <stddef.h>
 
-size_t	ft_strlcpy(char *dst, char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	unsigned int	i;
 	unsigned int	src_size;

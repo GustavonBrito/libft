@@ -6,12 +6,11 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:01:27 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/19 20:11:14 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/21 20:23:03 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strrchr(char *s, int c)
 {

@@ -6,12 +6,11 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 00:51:17 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2024/10/19 19:55:13 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/21 23:54:59 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 char	*strdup(const char *s)
 {

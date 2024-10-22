@@ -6,12 +6,10 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:07:43 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/20 01:33:11 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/21 23:17:53 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
 #include <string.h>
 
 static int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -60,6 +58,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	return (0);
 }
+
 // //if little occurs nowhere in big, NULL is returned
 // int	main(void)
 // {

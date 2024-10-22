@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 18:11:08 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/13 18:11:08 by marvin           ###   ########.fr       */
+/*   Updated: 2024/10/21 19:20:58 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	s_length;
 
@@ -25,10 +26,10 @@ size_t	ft_strlen(char *s)
 	return (s_length);
 }
 
-// int main(void)
+// int	main(void)
 // {
-//     char gustavo[] = "gustavo";
+// 	char gustavo[] = "gustavo";
 
-//     printf("%d", ft_strlen(gustavo));
-//     return (0);
+// 	printf("%ld", ft_strlen(gustavo));
+// 	return (0);
 // }
