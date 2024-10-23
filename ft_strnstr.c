@@ -6,7 +6,7 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:07:43 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/22 23:00:20 by gserafio         ###   ########.fr       */
+/*   Updated: 2024/10/23 20:10:06 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp_modified(const char *s1, const char *s2, size_t n)
 {
 	const unsigned char	*s1_unsigned;
 	const unsigned char	*s2_unsigned;
@@ -36,43 +36,58 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (s1_unsigned[i] - s2_unsigned[i]);
 }
 
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	s_length;
+
+// 	s_length = 0;
+// 	while (*s)
+// 	{
+// 		s_length++;
+// 		s++;
+// 	}
+// 	return (s_length);
+// }
+
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	unsigned int	i;
+	unsigned int	little_size;
 
 	i = 0;
+	little_size = 0;
+	if (big[i] == '\0')
+		return ((char *)big);
 	if (little[i] == '\0')
 		return ((char *)big);
 	if (len <= 0)
 		return (0);
-	while (i < len && big[i])
+	little_size = ft_strlen(little);
+	while (i + little_size <= len)
 	{
-		if (ft_strncmp(big, little, len) == 0)
-		{
+		if (ft_strncmp_modified(big, little, little_size) == 0)
 			return (((char *)big));
-		}
 		else
 		{
 			big = &big[1];
-			len--;
 		}
 		i++;
 	}
 	return (0);
 }
 
-int	main(void)
-{
-    const char *big;
-    const char *little;
-    const char *result;
-    //Test case 1
-    big = "aaabcabcd";
-    little = "abcd";
-    result = ft_strnstr(big, little, 9);
-    printf("Result 1: %s\n", result); // Expected: "World!"
-	return (0);
-}
+// int	main(void)
+// {
+//     const char *big;
+//     const char *little;
+//     const char *result;
+//     //Test case 1
+//     big = "aaxx";
+//     little = "xx";
+//     result = ft_strnstr(big, little, 4);
+//     printf("Result 1: %s\n", result); // Expected: "World!"
+// 	return (0);
+// }
 // }
 // }
 // }
