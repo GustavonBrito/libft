@@ -6,12 +6,10 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:07:43 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/23 20:10:06 by gserafio         ###   ########.fr       */
+/*   Updated: 2024/10/23 20:42:35 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_strncmp_modified(const char *s1, const char *s2, size_t n)
@@ -36,19 +34,6 @@ int	ft_strncmp_modified(const char *s1, const char *s2, size_t n)
 	return (s1_unsigned[i] - s2_unsigned[i]);
 }
 
-// size_t	ft_strlen(const char *s)
-// {
-// 	size_t	s_length;
-
-// 	s_length = 0;
-// 	while (*s)
-// 	{
-// 		s_length++;
-// 		s++;
-// 	}
-// 	return (s_length);
-// }
-
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	unsigned int	i;
@@ -56,8 +41,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	little_size = 0;
-	if (big[i] == '\0')
+	if (big[i] == '\0' && little[i] == '\0')
 		return ((char *)big);
+	if (big[i] == '\0')
+		return (0);
 	if (little[i] == '\0')
 		return ((char *)big);
 	if (len <= 0)
