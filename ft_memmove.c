@@ -6,7 +6,7 @@
 /*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:34:03 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2024/10/22 19:55:53 by gserafio         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:08:38 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,18 @@ static void	*ft_strcpy(int n, int i, unsigned char *dest_unsingned,
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	const unsigned char	*src_unsigned;
-	unsigned char		*dest_unsingned;
+	unsigned char		*dest_unsigned;
 	unsigned int		i;
 
 	src_unsigned = src;
-	dest_unsingned = dest;
+	dest_unsigned = dest;
 	i = 0;
-	if (dest_unsingned == 0 && src_unsigned == 0)
-		return ((unsigned char *)(dest_unsingned));
+	if (dest_unsigned == 0 && src_unsigned == 0)
+		return ((unsigned char *)(dest_unsigned));
 	if (n == 0)
-		return ((unsigned char *)(dest_unsingned));
-	dest_unsingned = ft_strcpy(n, i, dest_unsingned, src_unsigned);
-	return ((unsigned char *)(dest_unsingned));
+		return ((unsigned char *)(dest_unsigned));
+	dest_unsigned = ft_strcpy(n, i, dest_unsigned, src_unsigned);
+	return ((unsigned char *)(dest_unsigned));
 }
 
 // int	main(void)
