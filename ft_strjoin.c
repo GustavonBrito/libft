@@ -6,12 +6,11 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 15:38:22 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2024/10/27 22:44:57 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/27 22:48:00 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 // size_t	ft_strlen(const char *s)
 // {
