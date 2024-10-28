@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 16:18:17 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/23 20:52:02 by gserafio         ###   ########.fr       */
+/*   Updated: 2024/10/27 22:43:53 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 int		ft_atoi(const char *nptr);
 int		ft_toupper(int c);
@@ -35,3 +35,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
