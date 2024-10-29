@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 00:51:17 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2024/10/22 19:56:36 by gserafio         ###   ########.fr       */
+/*   Updated: 2024/10/28 21:32:48 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strdup(const char *s)
+#include "libft.h"
+
+char	*ft_strdup(const char *s)
 {
 	int		index;
 	char	*string_dup;
@@ -24,13 +26,15 @@ char	*strdup(const char *s)
 		s_size++;
 	}
 	string_dup = (char *)malloc(s_size + 1 * sizeof(char));
+	if (string_dup == (void *)0)
+		return ((void *)0);
 	index = 0;
 	while (s[index])
 	{
 		string_dup[index] = s[index];
 		index++;
 	}
-	string_dup[index + 1] = '\0';
+	string_dup[s_size] = '\0';
 	return (string_dup);
 }
 

@@ -6,12 +6,94 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 23:58:36 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2024/10/28 02:47:25 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/10/29 02:25:03 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
+#include <stdio.h>
+
+char	*ft_strrchr(char *s, int c)
+{
+	int	i;
+	int	flag;
+
+	i = 0;
+	flag = 0;
+	if (c > 255)
+		c = c % 256;
+	while (s[i])
+	{
+		if (ft_isascii(s[i]) == 0)
+			return (0);
+		if (s[i] == c)
+		{
+			s = &s[i];
+			i = 0;
+			flag = 1;
+		}
+		i++;
+	}
+	if (flag == 1)
+		return (s);
+	if (c == 0)
+		return (s = &s[i]);
+	return (0);
+}
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	unsigned int	i;
+	unsigned int	src_size;
+
+	src_size = 0;
+	i = 0;
+	while (src[i])
+	{
+		i++;
+		src_size++;
+	}
+	if (size == 0)
+		return (src_size);
+	i = 0;
+	while (src[i] && i < size - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (src_size);
+}
+
+int	ft_isascii(int c)
+{
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
+}
+
+char	*ft_strdup(const char *s)
+{
+	int		index;
+	char	*string_dup;
+	int		s_size;
+
+	index = 0;
+	s_size = 0;
+	while (s[index])
+	{
+		index++;
+		s_size++;
+	}
+	string_dup = (char *)malloc(s_size + 1 * sizeof(char));
+	index = 0;
+	while (s[index])
+	{
+		string_dup[index] = s[index];
+		index++;
+	}
+	string_dup[index + 1] = '\0';
+	return (string_dup);
+}
 
 size_t	ft_strlen(const char *s)
 {
@@ -26,122 +108,69 @@ size_t	ft_strlen(const char *s)
 	return (s_length);
 }
 
-// 	s_length = 0;
-// int	ft_strncmp_modified(const char *s1, const char *s2, size_t n)
-// {
-// 	const unsigned char	*s1_unsigned;
-// 	const unsigned char	*s2_unsigned;
-// 	unsigned int		i;
-
-// 	i = 0;
-// 	s1_unsigned = (const unsigned char *)s1;
-// 	s2_unsigned = (const unsigned char *)s2;
-// 	if (n == 0)
-// 		return (0);
-// 	while (s1_unsigned[i] && s2_unsigned[i] && i < n - 1)
-// 	{
-// 		if (s1_unsigned[i] != s2_unsigned[i])
-// 			return (s1_unsigned[i] - s2_unsigned[i]);
-// 		i++;
-// 	}
-// 	if (s2_unsigned[i] == '\0' || s1_unsigned[i] == '\0')
-// 		i -= 1;
-// 	return (s1_unsigned[i] - s2_unsigned[i]);
-// }
-
-// char	*ft_strnstr(const char *big, const char *little, size_t len)
-// {
-// 	unsigned int	i;
-// 	unsigned int	little_size;
-
-// 	i = 0;
-// 	little_size = 0;
-// 	if (big[i] == '\0' && little[i] == '\0')
-// 		return ((char *)big);
-// 	if (big[i] == '\0')
-// 		return (0);
-// 	if (little[i] == '\0')
-// 		return ((char *)big);
-// 	if (len <= 0)
-// 		return (0);
-// 	little_size = ft_strlen(little);
-// 	while (i + little_size <= len)
-// 	{
-// 		if (ft_strncmp_modified(big, little, little_size) == 0)
-// 			return (((char *)big));
-// 		else
-// 		{
-// 			big = &big[1];
-// 		}
-// 		i++;
-// 	}
-// 	return (0);
-// }
-int     ft_strncmp(const char *s1, const char *s2, size_t n)
+static char	*ft_find_first_index_trim(char *modifiable_s1, char const *set)
 {
-	const unsigned char	*s1_unsigned;
-	const unsigned char	*s2_unsigned;
-	unsigned int		i;
+	unsigned int	i;
+	char			*similar_char;
 
 	i = 0;
-	s1_unsigned = (const unsigned char *)s1;
-	s2_unsigned = (const unsigned char *)s2;
-	if (n == 0)
-		return (0);
-	while (s1_unsigned[i] && s2_unsigned[i] && i < n - 1)
+	while (set[i] || ((set[0]) != (modifiable_s1[0])))
 	{
-		if (s1_unsigned[i] != s2_unsigned[i])
-			return (s1_unsigned[i] - s2_unsigned[i]);
+		similar_char = ft_strrchr((char *)set, (int)(modifiable_s1[0]));
+		if (similar_char == ((void *)0))
+			break ;
+		while (similar_char[0] == modifiable_s1[0])
+			modifiable_s1 = &modifiable_s1[1];
 		i++;
 	}
-	return (s1_unsigned[i] - s2_unsigned[i]);
+	return (modifiable_s1);
 }
 
-// char	*ft_strcat(char *dest, const char *src)
-// {
-// 	int	i;
-// 	int	dest_len;
+static char	*ft_find_last_index_trim(char *modifiable_s1, char const *set,
+		unsigned int s1_size)
+{
+	unsigned int	i;
+	char			*similar_char;
 
-// 	i = 0;
-// 	dest_len = 0;
-// 	while (dest[dest_len])
-// 	{
-// 		dest_len++;
-// 	}
-// 	while (src[i])
-// 	{
-// 		dest[dest_len + i] = src[i];
-// 		i++;
-// 	}
-// 	return (dest);
-// }
+	i = 0;
+	while (set[i] && ((set[0]) != (modifiable_s1[0])))
+	{
+		similar_char = ft_strrchr((char *)set, (int)(modifiable_s1[s1_size
+					- 1]));
+		if (similar_char == ((void *)0))
+			break ;
+		while (similar_char[0] == modifiable_s1[s1_size - 1])
+		{
+			modifiable_s1[s1_size - 1] = '\0';
+			s1_size--;
+			if (s1_size == 0)
+				break ;
+		}
+		i++;
+	}
+	return (modifiable_s1);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int s1_size;
-    unsigned int set_size;
-    unsigned int elements_to_trim;
-    unsigned int i;
-    
-    if (s1 == (void *)0 || set == (void *)0)
+	unsigned int	s1_size;
+	char			*modifiable_s1;
+	char			*pointer_malloc;
+
+	if (s1 == (void *)0 || set == (void *)0)
 		return ((void *)0);
-    s1_size = ft_strlen(s1);
-    set_size = ft_strlen(set);
-    i = 0;
-    while (i < set_size)
-    {
-        if (ft_strncmp(s1, set, set_size) != 0)
-        {
-            
-        }
-        if (ft_strncmp(&s1[s1_size], set, set_size) != 0)
-        {
-            
-        }
-        i++;
-    }
-    
-	//return (pointer_malloc);
+	if (ft_strlen(s1) == 0 || ft_strlen(set) == 0)
+		return ((char *)s1);
+	modifiable_s1 = ft_strdup(s1);
+	modifiable_s1 = ft_find_first_index_trim(modifiable_s1, set);
+	s1_size = ft_strlen(modifiable_s1);
+	modifiable_s1 = ft_find_last_index_trim(modifiable_s1, set, s1_size);
+	pointer_malloc = (char *)malloc(sizeof(char) * s1_size + 1);
+	if (pointer_malloc == ((void *)0))
+		return ((void *)0);
+	ft_strlcpy(pointer_malloc, modifiable_s1, s1_size + 1);
+	pointer_malloc[s1_size] = '\0';
+	return (pointer_malloc);
 }
 
 int	main(void)
@@ -149,9 +178,9 @@ int	main(void)
 	char	*s1;
 	char	*set;
 
-	s1 = "lorem ipsum dolor sit amet";
-	set = "te";
-	printf("%s", ft_strtrim(s1, set));
+	s1 = "   \t  \n\n \t\t  \n\n nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+	set = " \n\t";
+	printf("%s\n", ft_strtrim(s1, set));
 	return (0);
 }
 
