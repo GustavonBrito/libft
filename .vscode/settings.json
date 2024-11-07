@@ -1,6 +1,7 @@
 {
 	"files.associations": {
 		"libft.h": "c",
-		"initializer_list": "c"
+		"initializer_list": "c",
+		"stdio.h": "c"
 	}
 }

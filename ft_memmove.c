@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:34:03 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2024/10/23 21:08:38 by gserafio         ###   ########.fr       */
+/*   Updated: 2024/11/07 05:08:42 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static void	*ft_strcpy(int n, int i, unsigned char *dest_unsingned,
-		const unsigned char *src_unsigned)
+	const unsigned char *src_unsigned)
 {
 	if (dest_unsingned > src_unsigned)
 	{

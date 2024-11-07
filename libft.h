@@ -6,12 +6,13 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 16:18:17 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/06 02:02:07 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/11/07 05:39:44 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 int		ft_atoi(const char *nptr);
 int		ft_toupper(int c);
@@ -41,3 +42,9 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strdup(const char *s);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
