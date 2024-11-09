@@ -22,7 +22,7 @@ To compile and use the libft library, follow these steps:
      make
    ```
   
-3.Include the library in your project:
+3. Include the library in your project:
    ```sh
      gcc -L. -lft your_program.c -o your_program
    ```
