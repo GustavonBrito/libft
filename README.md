@@ -19,18 +19,16 @@ To compile and use the libft library, follow these steps:
    ```
 2. Compile the library:
 
-  make
+     make
   
 3.Include the library in your project:
-  gcc -L. -lft your_program.c -o your_program
+     gcc -L. -lft your_program.c -o your_program
 
 ## Usage
 
----------------------
-
 Include the libft.h header file in your C programs to use the functions provided by the library. Here is an example:
 
-  '''C
+  ```C
   #include "libft.h"
 
   int main() {
@@ -39,10 +37,10 @@ Include the libft.h header file in your C programs to use the functions provided
     free(str);
     return 0;
   }
- '''
+ ```
 
 ## Functions
-----------------------
+
 Libft implements several common functions, including but not limited to:
 
     ft_strlen - Calculate the length of a string.
