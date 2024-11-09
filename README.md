@@ -18,11 +18,14 @@ To compile and use the libft library, follow these steps:
    cd libft
    ```
 2. Compile the library:
-
+   ```sh
      make
+   ```
   
 3.Include the library in your project:
+   ```sh
      gcc -L. -lft your_program.c -o your_program
+   ```
 
 ## Usage
 
