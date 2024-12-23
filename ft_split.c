@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
+/*   By: gserafio <gserafio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 01:13:33 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2024/11/05 21:33:57 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2024/11/07 22:52:56 by gserafio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*s && *s == c)
 			s++;
-		if (!*s)
+		if (*s == '\0')
 			break ;
 		array[i] = ft_get_word(s, c);
 		if (array[i] == (void *)0)
@@ -91,6 +91,7 @@ char	**ft_split(char const *s, char c)
 		s += ft_word_len(s, c);
 		i++;
 	}
-	array[i] = '\0';
+	array[i] = (void *)0;
 	return (array);
 }
+
